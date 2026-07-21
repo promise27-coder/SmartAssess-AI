@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Analysis | Smart Assess</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-950 text-white min-h-screen">
+
+    <!-- Navbar -->
+
+    <nav class="flex items-center px-8 md:px-16 py-5 border-b border-slate-800">
+
+        <div class="flex items-center gap-3">
+
+            <div class="bg-blue-600 w-10 h-10 rounded-xl flex items-center justify-center font-bold text-xl">
+                S
+            </div>
+
+            <h1 class="text-2xl font-bold">
+                Smart <span class="text-blue-500">Assess</span>
+            </h1>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Loading Section -->
+
+    <div class="flex flex-col items-center justify-center text-center py-24 px-5">
+
+        <!-- AI Icon -->
+
+        <div class="w-28 h-28 bg-blue-600 rounded-full flex items-center justify-center text-5xl mb-8 animate-pulse">
+
+            🤖
+
+        </div>
+
+
+        <!-- Heading -->
+
+        <h1 class="text-4xl font-bold mb-4">
+
+            AI is Analyzing Your Answer...
+
+        </h1>
+
+
+        <p class="text-gray-400 text-lg mb-10">
+
+            Please wait while Smart Assess evaluates your interview performance.
+
+        </p>
+
+
+        <!-- Loading Spinner -->
+
+        <div class="w-14 h-14 border-4 border-slate-700 border-t-blue-500 rounded-full animate-spin mb-10">
+
+        </div>
+
+
+        <!-- Analysis Status Box -->
+
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 w-full max-w-md text-left">
+
+            <h2 class="text-xl font-semibold mb-5">
+                Interview Analysis
+            </h2>
+
+
+            <p class="text-green-400 mb-4">
+                ✓ Processing Technical Answers
+            </p>
+
+
+            <p class="text-green-400 mb-4">
+                ✓ Analyzing Eye Contact
+            </p>
+
+
+            <p class="text-green-400 mb-4">
+                ✓ Checking Communication Skills
+            </p>
+
+
+            <p class="text-blue-400">
+                ● Generating Final Feedback...
+            </p>
+
+        </div>
+
+
+        <!-- Progress Text -->
+
+        <p id="progressText" class="text-gray-400 mt-8">
+
+            Preparing your interview report...
+
+        </p>
+
+    </div>
+
+
+    <!-- JavaScript -->
+
+    <script>
+
+        var messages = [
+
+            "Processing your technical answers...",
+
+            "Analyzing eye contact and confidence...",
+
+            "Checking filler words and communication...",
+
+            "Calculating your performance score...",
+
+            "Generating your final interview report..."
+
+        ];
+
+
+        var messageNumber = 0;
+
+
+        setInterval(function() {
+
+            document.getElementById("progressText").innerHTML =
+                messages[messageNumber];
+
+            messageNumber++;
+
+
+            if (messageNumber == messages.length) {
+
+                messageNumber = 0;
+
+            }
+
+        }, 1500);
+
+
+        // Open Result Page After 8 Seconds
+
+        setTimeout(function() {
+
+            window.location.href = "result.html";
+
+        }, 8000);
+
+    </script>
+
+</body>
+
+</html>

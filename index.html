@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Assess | AI Mock Interviewer</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-950 text-white min-h-screen">
+
+    <!-- Navbar -->
+    <nav class="flex justify-between items-center px-8 md:px-16 py-6 border-b border-slate-800">
+
+        <!-- Logo -->
+        <div class="flex items-center gap-3">
+            <div class="bg-blue-600 w-10 h-10 rounded-xl flex items-center justify-center font-bold text-xl">
+                S
+            </div>
+
+            <h1 class="text-2xl font-bold">
+                Smart <span class="text-blue-500">Assess</span>
+            </h1>
+        </div>
+
+        <!-- Navigation -->
+        <div class="hidden md:flex gap-8 text-gray-300">
+            <a href="#" class="hover:text-blue-400 transition">Home</a>
+            <a href="#" class="hover:text-blue-400 transition">How It Works</a>
+            <a href="#" class="hover:text-blue-400 transition">Features</a>
+            <a href="#" class="hover:text-blue-400 transition">About</a>
+        </div>
+
+        <!-- Login Button -->
+        <button class="border border-blue-500 px-5 py-2 rounded-lg hover:bg-blue-600 transition">
+            Login
+        </button>
+
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section class="flex flex-col md:flex-row items-center justify-between px-8 md:px-16 py-20">
+
+        <!-- Left Content -->
+        <div class="md:w-1/2">
+
+            <p class="text-blue-400 font-semibold mb-4">
+                🚀 AI POWERED INTERVIEW PLATFORM
+            </p>
+
+            <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6">
+
+                Master Your Interview
+
+                <span class="text-blue-500">
+                    With AI
+                </span>
+
+            </h1>
+
+            <p class="text-gray-400 text-lg mb-8 max-w-xl">
+
+                Practice technical interviews with AI-powered analysis.
+                Improve your technical knowledge, communication skills,
+                confidence and eye contact.
+
+            </p>
+
+
+            <!-- Role Selection -->
+
+            <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 max-w-md">
+
+                <label class="block text-gray-300 mb-3">
+                    Select Interview Role
+                </label>
+
+                <select
+                    id="role"
+                    class="w-full bg-slate-800 border border-slate-700 p-3 rounded-lg mb-5 outline-none focus:border-blue-500">
+
+                    <option value="">Choose Your Role</option>
+
+                    <option>Python Developer</option>
+
+                    <option>Java Developer</option>
+
+                    <option>Frontend Developer</option>
+
+                    <option>Backend Developer</option>
+
+                    <option>Data Analyst</option>
+
+                    <option>AI / ML Engineer</option>
+
+                </select>
+
+
+                <!-- Start Interview Button -->
+
+                <button
+                    onclick="startInterview()"
+                    class="w-full bg-blue-600 hover:bg-blue-700 py-3 rounded-lg font-semibold transition">
+
+                    Start AI Interview →
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Right AI Card -->
+
+        <div class="md:w-1/2 mt-16 md:mt-0 flex justify-center">
+
+            <div class="relative">
+
+                <!-- Glow Effect -->
+
+                <div class="absolute inset-0 bg-blue-600 blur-3xl opacity-20"></div>
+
+
+                <!-- AI Interview Card -->
+
+                <div class="relative bg-slate-900 border border-slate-700 rounded-3xl p-8 w-80 shadow-2xl">
+
+                    <div class="flex justify-between items-center mb-8">
+
+                        <p class="text-gray-400">
+                            AI Interviewer
+                        </p>
+
+                        <span class="text-green-400 text-sm">
+                            ● LIVE
+                        </span>
+
+                    </div>
+
+
+                    <!-- AI Icon -->
+
+                    <div class="flex justify-center mb-8">
+
+                        <div class="w-32 h-32 rounded-full bg-blue-600 flex items-center justify-center text-6xl">
+
+                            🤖
+
+                        </div>
+
+                    </div>
+
+
+                    <p class="text-center text-gray-300 mb-6">
+
+                        "Tell me about Object Oriented Programming."
+
+                    </p>
+
+
+                    <!-- Audio Animation -->
+
+                    <div class="flex justify-center items-end gap-1 h-12">
+
+                        <div class="w-2 h-5 bg-blue-500 rounded"></div>
+
+                        <div class="w-2 h-10 bg-blue-500 rounded"></div>
+
+                        <div class="w-2 h-7 bg-blue-500 rounded"></div>
+
+                        <div class="w-2 h-12 bg-blue-500 rounded"></div>
+
+                        <div class="w-2 h-8 bg-blue-500 rounded"></div>
+
+                        <div class="w-2 h-5 bg-blue-500 rounded"></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Features Section -->
+
+    <section class="px-8 md:px-16 py-16 bg-slate-900">
+
+        <h2 class="text-3xl font-bold text-center mb-12">
+
+            AI Powered Interview Analysis
+
+        </h2>
+
+
+        <div class="grid md:grid-cols-3 gap-8">
+
+
+            <!-- Feature 1 -->
+
+            <div class="bg-slate-950 p-7 rounded-2xl border border-slate-800 hover:border-blue-500 transition">
+
+                <div class="text-4xl mb-4">
+                    🧠
+                </div>
+
+                <h3 class="text-xl font-semibold mb-3">
+                    Technical Analysis
+                </h3>
+
+                <p class="text-gray-400">
+
+                    AI evaluates your technical answers and provides
+                    detailed improvement feedback.
+
+                </p>
+
+            </div>
+
+
+            <!-- Feature 2 -->
+
+            <div class="bg-slate-950 p-7 rounded-2xl border border-slate-800 hover:border-blue-500 transition">
+
+                <div class="text-4xl mb-4">
+                    👁️
+                </div>
+
+                <h3 class="text-xl font-semibold mb-3">
+                    Eye Contact Tracking
+                </h3>
+
+                <p class="text-gray-400">
+
+                    Computer vision analyzes your eye contact
+                    and confidence during interviews.
+
+                </p>
+
+            </div>
+
+
+            <!-- Feature 3 -->
+
+            <div class="bg-slate-950 p-7 rounded-2xl border border-slate-800 hover:border-blue-500 transition">
+
+                <div class="text-4xl mb-4">
+                    🎤
+                </div>
+
+                <h3 class="text-xl font-semibold mb-3">
+                    Communication Analysis
+                </h3>
+
+                <p class="text-gray-400">
+
+                    Detect filler words and analyze your speaking
+                    speed and communication skills.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- JavaScript -->
+
+    <script>
+
+        function startInterview() {
+
+            const role = document.getElementById("role").value;
+
+            if (role === "") {
+
+                alert("Please select an interview role!");
+
+            }
+
+            else {
+
+                alert("Starting interview for " + role);
+
+                // Later connect Interview Room Page
+
+                window.location.href = "interview.html";
+
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>

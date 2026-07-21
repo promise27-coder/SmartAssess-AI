@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Interview Result | Smart Assess</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="bg-slate-950 text-white min-h-screen">
+
+    <!-- Navbar -->
+    <nav class="flex justify-between items-center px-8 md:px-16 py-5 border-b border-slate-800">
+
+        <div class="flex items-center gap-3">
+
+            <div class="bg-blue-600 w-10 h-10 rounded-xl flex items-center justify-center font-bold text-xl">
+                S
+            </div>
+
+            <h1 class="text-2xl font-bold">
+                Smart <span class="text-blue-500">Assess</span>
+            </h1>
+
+        </div>
+
+        <button onclick="goHome()"
+            class="border border-blue-500 px-5 py-2 rounded-lg hover:bg-blue-600">
+
+            Home
+
+        </button>
+
+    </nav>
+
+
+    <!-- Main Content -->
+    <div class="px-8 md:px-16 py-10">
+
+        <!-- Heading -->
+        <div class="text-center mb-10">
+
+            <p class="text-green-400 font-semibold">
+                ✓ INTERVIEW COMPLETED
+            </p>
+
+            <h1 class="text-4xl font-bold mt-3">
+                Your Interview Report
+            </h1>
+
+            <p class="text-gray-400 mt-3">
+                AI analysis of your interview performance
+            </p>
+
+        </div>
+
+
+        <!-- Overall Score -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8 text-center mb-8">
+
+            <h2 class="text-gray-400 text-lg">
+                Overall Performance
+            </h2>
+
+            <p class="text-6xl font-bold text-blue-500 mt-4">
+                82%
+            </p>
+
+            <p class="text-green-400 mt-3">
+                Excellent Performance
+            </p>
+
+        </div>
+
+
+        <!-- Score Cards -->
+        <div class="grid md:grid-cols-3 gap-6 mb-8">
+
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 text-center">
+
+                <p class="text-4xl mb-3">🧠</p>
+
+                <h3 class="text-gray-400">
+                    Technical Score
+                </h3>
+
+                <p class="text-3xl font-bold text-blue-400 mt-3">
+                    85%
+                </p>
+
+            </div>
+
+
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 text-center">
+
+                <p class="text-4xl mb-3">👁️</p>
+
+                <h3 class="text-gray-400">
+                    Eye Contact
+                </h3>
+
+                <p class="text-3xl font-bold text-blue-400 mt-3">
+                    78%
+                </p>
+
+            </div>
+
+
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 text-center">
+
+                <p class="text-4xl mb-3">🎤</p>
+
+                <h3 class="text-gray-400">
+                    Communication
+                </h3>
+
+                <p class="text-3xl font-bold text-blue-400 mt-3">
+                    83%
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Charts -->
+        <div class="grid md:grid-cols-2 gap-8 mb-8">
+
+            <!-- Bar Chart -->
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+
+                <h2 class="text-xl font-semibold mb-6">
+                    Performance Analysis
+                </h2>
+
+                <canvas id="barChart"></canvas>
+
+            </div>
+
+
+            <!-- Radar Chart -->
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+
+                <h2 class="text-xl font-semibold mb-6">
+                    Skill Analysis
+                </h2>
+
+                <canvas id="radarChart"></canvas>
+
+            </div>
+
+        </div>
+
+
+        <!-- Feedback Section -->
+        <div class="grid md:grid-cols-2 gap-8 mb-8">
+
+            <!-- Strength -->
+            <div class="bg-slate-900 border border-green-800 rounded-2xl p-6">
+
+                <h2 class="text-xl font-semibold text-green-400 mb-5">
+                    ✓ Your Strengths
+                </h2>
+
+                <p class="text-gray-300 mb-3">
+                    ✓ Good technical knowledge
+                </p>
+
+                <p class="text-gray-300 mb-3">
+                    ✓ Clear explanation of concepts
+                </p>
+
+                <p class="text-gray-300">
+                    ✓ Good communication skills
+                </p>
+
+            </div>
+
+
+            <!-- Improvement -->
+            <div class="bg-slate-900 border border-yellow-800 rounded-2xl p-6">
+
+                <h2 class="text-xl font-semibold text-yellow-400 mb-5">
+                    💡 Areas to Improve
+                </h2>
+
+                <p class="text-gray-300 mb-3">
+                    • Maintain better eye contact
+                </p>
+
+                <p class="text-gray-300 mb-3">
+                    • Reduce filler words like "um" and "uh"
+                </p>
+
+                <p class="text-gray-300">
+                    • Explain technical answers with examples
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- AI Feedback -->
+        <div class="bg-slate-900 border border-blue-800 rounded-2xl p-7 mb-8">
+
+            <h2 class="text-xl font-semibold text-blue-400 mb-4">
+                🤖 AI Interview Feedback
+            </h2>
+
+            <p class="text-gray-300 leading-relaxed">
+
+                You demonstrated good technical knowledge and communication
+                skills during the interview. Your answers were clear and
+                relevant. Try to maintain better eye contact and reduce filler
+                words. Adding practical examples to your technical answers
+                will improve your interview performance.
+
+            </p>
+
+        </div>
+
+
+        <!-- Buttons -->
+        <div class="flex justify-center gap-5">
+
+            <button onclick="tryAgain()"
+                class="bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-lg font-semibold">
+
+                Try Another Interview
+
+            </button>
+
+            <button onclick="goHome()"
+                class="border border-slate-600 hover:bg-slate-800 px-8 py-3 rounded-lg">
+
+                Back to Home
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- JavaScript -->
+    <script>
+
+        // Bar Chart
+
+        var barData = document.getElementById("barChart");
+
+        new Chart(barData, {
+
+            type: "bar",
+
+            data: {
+
+                labels: [
+                    "Technical",
+                    "Eye Contact",
+                    "Communication"
+                ],
+
+                datasets: [{
+
+                    label: "Score",
+
+                    data: [85, 78, 83],
+
+                    backgroundColor: [
+                        "#3b82f6",
+                        "#22c55e",
+                        "#a855f7"
+                    ]
+
+                }]
+
+            },
+
+            options: {
+
+                scales: {
+
+                    y: {
+
+                        beginAtZero: true,
+
+                        max: 100
+
+                    }
+
+                }
+
+            }
+
+        });
+
+
+        // Radar Chart
+
+        var radarData = document.getElementById("radarChart");
+
+        new Chart(radarData, {
+
+            type: "radar",
+
+            data: {
+
+                labels: [
+                    "Technical",
+                    "Confidence",
+                    "Communication",
+                    "Eye Contact",
+                    "Clarity"
+                ],
+
+                datasets: [{
+
+                    label: "Performance",
+
+                    data: [85, 80, 83, 78, 88],
+
+                    backgroundColor: "rgba(59, 130, 246, 0.2)",
+
+                    borderColor: "#3b82f6"
+
+                }]
+
+            }
+
+        });
+
+
+        // Try Interview Again
+
+        function tryAgain() {
+
+            window.location.href = "interview.html";
+
+        }
+
+
+        // Go Home
+
+        function goHome() {
+
+            window.location.href = "index.html";
+
+        }
+
+    </script>
+
+</body>
+
+</html>
